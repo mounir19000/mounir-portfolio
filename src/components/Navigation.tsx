@@ -1,17 +1,16 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
+import type { Dictionary } from "@/i18n/messages/types";
+import type { Locale } from "@/i18n/config";
 
-const links = [
-  { label: "About", href: "#about" },
-  { label: "Experience", href: "#experience" },
-  { label: "Projects", href: "#projects" },
-  { label: "Hackathons", href: "#hackathons" },
-  { label: "Skills", href: "#skills" },
-  { label: "Contact", href: "#contact" },
-];
+interface NavigationProps {
+  dictionary: Dictionary;
+  lang: Locale;
+}
 
-export default function Navigation() {
+export default function Navigation({ dictionary, lang }: NavigationProps) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -31,14 +30,14 @@ export default function Navigation() {
     >
       <div className="mx-auto max-w-7xl flex items-center justify-between px-6 py-4 lg:px-12">
         <a
-          href="#"
+          href={`/${lang}`}
           className="font-mono text-sm text-kinetic-cyan tracking-wider hover:text-white transition-colors"
         >
           mounir19000
         </a>
 
-        <div className="hidden md:flex items-center gap-8">
-          {links.map((link) => (
+        <div className="hidden md:flex items-center gap-6">
+          {dictionary.navigation.links.map((link) => (
             <a
               key={link.href}
               href={link.href}
@@ -47,12 +46,26 @@ export default function Navigation() {
               {link.label}
             </a>
           ))}
+          <label className="sr-only" htmlFor="lang-switcher-desktop">
+            {dictionary.navigation.languageLabel}
+          </label>
+          <select
+            id="lang-switcher-desktop"
+            value={lang}
+            onChange={(event) => {
+              window.location.href = `/${event.target.value}`;
+            }}
+            className="bg-slate-mtx border border-grid-line rounded px-2.5 py-1.5 text-xs text-text-secondary hover:text-white"
+          >
+            <option value="en">{dictionary.navigation.languageOptions.en}</option>
+            <option value="fr">{dictionary.navigation.languageOptions.fr}</option>
+          </select>
         </div>
 
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
           className="md:hidden text-text-secondary hover:text-white transition-colors"
-          aria-label="Toggle navigation"
+          aria-label={dictionary.navigation.toggleNavigation}
         >
           <svg
             width="24"
@@ -73,7 +86,7 @@ export default function Navigation() {
 
       {mobileOpen && (
         <div className="md:hidden bg-obsidian/95 backdrop-blur-xl border-b border-grid-line px-6 pb-4">
-          {links.map((link) => (
+          {dictionary.navigation.links.map((link) => (
             <a
               key={link.href}
               href={link.href}
@@ -83,6 +96,28 @@ export default function Navigation() {
               {link.label}
             </a>
           ))}
+          <div className="pt-2 flex gap-2">
+            <Link
+              href="/en"
+              className={`px-3 py-1.5 rounded border text-xs font-mono ${
+                lang === "en"
+                  ? "border-kinetic-cyan/40 text-kinetic-cyan"
+                  : "border-grid-line text-text-secondary"
+              }`}
+            >
+              {dictionary.navigation.languageOptions.en}
+            </Link>
+            <Link
+              href="/fr"
+              className={`px-3 py-1.5 rounded border text-xs font-mono ${
+                lang === "fr"
+                  ? "border-kinetic-cyan/40 text-kinetic-cyan"
+                  : "border-grid-line text-text-secondary"
+              }`}
+            >
+              {dictionary.navigation.languageOptions.fr}
+            </Link>
+          </div>
         </div>
       )}
     </nav>

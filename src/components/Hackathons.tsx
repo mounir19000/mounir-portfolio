@@ -1,5 +1,6 @@
 import SectionReveal from "./SectionReveal";
 import { hackathons } from "@/data/portfolio";
+import type { Dictionary } from "@/i18n/messages/types";
 
 function getRankStyle(rank: number) {
   if (rank === 1) {
@@ -23,19 +24,19 @@ function getRankStyle(rank: number) {
   };
 }
 
-export default function Hackathons() {
+export default function Hackathons({ dictionary }: { dictionary: Dictionary }) {
   return (
     <section id="hackathons" className="py-24 lg:py-32 bg-slate-mtx/30">
       <div className="mx-auto max-w-7xl px-6 lg:px-12">
         <SectionReveal>
           <p className="font-mono text-sm text-kinetic-cyan tracking-widest uppercase mb-3">
-            Competitions
+            {dictionary.hackathons.eyebrow}
           </p>
           <h2 className="font-heading text-3xl sm:text-4xl font-bold mb-4">
-            Hackathons & Datathons
+            {dictionary.hackathons.title}
           </h2>
           <p className="text-text-secondary mb-12 max-w-xl">
-            2 wins, 4+ podium finishes across AI, NLP, optimization, and computer vision challenges.
+            {dictionary.hackathons.subtitle}
           </p>
         </SectionReveal>
 

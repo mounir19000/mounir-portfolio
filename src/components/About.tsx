@@ -1,16 +1,17 @@
 import SectionReveal from "./SectionReveal";
 import { aboutShort, tracks, sideTrack } from "@/data/portfolio";
+import type { Dictionary } from "@/i18n/messages/types";
 
-export default function About() {
+export default function About({ dictionary }: { dictionary: Dictionary }) {
   return (
     <section id="about" className="py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-12">
         <SectionReveal>
           <p className="font-mono text-sm text-kinetic-cyan tracking-widest uppercase mb-3">
-            About
+            {dictionary.about.eyebrow}
           </p>
           <h2 className="font-heading text-3xl sm:text-4xl font-bold mb-8">
-            Who I Am
+            {dictionary.about.title}
           </h2>
         </SectionReveal>
 

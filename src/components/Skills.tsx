@@ -1,5 +1,6 @@
 import SectionReveal from "./SectionReveal";
 import { skills } from "@/data/portfolio";
+import type { Dictionary } from "@/i18n/messages/types";
 
 const categoryAccents: Record<string, string> = {
   "Programming Languages": "border-kinetic-cyan/20 text-kinetic-cyan",
@@ -11,16 +12,16 @@ const categoryAccents: Record<string, string> = {
   "Design / UI-UX": "border-neon-violet/20 text-neon-violet",
 };
 
-export default function Skills() {
+export default function Skills({ dictionary }: { dictionary: Dictionary }) {
   return (
     <section id="skills" className="py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-12">
         <SectionReveal>
           <p className="font-mono text-sm text-kinetic-cyan tracking-widest uppercase mb-3">
-            Skills
+            {dictionary.skills.eyebrow}
           </p>
           <h2 className="font-heading text-3xl sm:text-4xl font-bold mb-12">
-            Tech Stack
+            {dictionary.skills.title}
           </h2>
         </SectionReveal>
 

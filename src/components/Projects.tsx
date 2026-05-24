@@ -3,15 +3,16 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { projects, type Track } from "@/data/portfolio";
+import type { Dictionary } from "@/i18n/messages/types";
 
 type Filter = "all" | "ai" | "frontend" | "hpc" | "tools";
 
-const filters: { label: string; value: Filter; accent: string }[] = [
-  { label: "All", value: "all", accent: "text-white" },
-  { label: "AI / ML", value: "ai", accent: "text-kinetic-cyan" },
-  { label: "Front-End", value: "frontend", accent: "text-neon-violet" },
-  { label: "HPC / Systems", value: "hpc", accent: "text-kinetic-cyan" },
-  { label: "Tools", value: "tools", accent: "text-text-secondary" },
+const filters: { key: keyof Dictionary["projects"]["filters"]; value: Filter; accent: string }[] = [
+  { key: "all", value: "all", accent: "text-white" },
+  { key: "ai", value: "ai", accent: "text-kinetic-cyan" },
+  { key: "frontend", value: "frontend", accent: "text-neon-violet" },
+  { key: "hpc", value: "hpc", accent: "text-kinetic-cyan" },
+  { key: "tools", value: "tools", accent: "text-text-secondary" },
 ];
 
 function getTrackColor(track: Track) {
@@ -41,7 +42,7 @@ function getTrackColor(track: Track) {
   }
 }
 
-export default function Projects() {
+export default function Projects({ dictionary }: { dictionary: Dictionary }) {
   const [active, setActive] = useState<Filter>("all");
 
   const filtered =
@@ -51,10 +52,10 @@ export default function Projects() {
     <section id="projects" className="py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-12">
         <p className="font-mono text-sm text-kinetic-cyan tracking-widest uppercase mb-3">
-          Projects
+          {dictionary.projects.eyebrow}
         </p>
         <h2 className="font-heading text-3xl sm:text-4xl font-bold mb-8">
-          What I&apos;ve Built
+          {dictionary.projects.title}
         </h2>
 
         <div className="flex flex-wrap gap-2 mb-10">
@@ -74,7 +75,7 @@ export default function Projects() {
                   : "bg-slate-mtx text-text-secondary border border-grid-line hover:text-white"
               }`}
             >
-              {f.label}
+              {dictionary.projects.filters[f.key]}
             </button>
           ))}
         </div>
@@ -105,7 +106,7 @@ export default function Projects() {
                           target="_blank"
                           rel="noopener noreferrer"
                           className="shrink-0 text-text-secondary hover:text-white transition-colors"
-                          aria-label={`View ${project.title} on GitHub`}
+                          aria-label={`${dictionary.projects.viewOnGitHubPrefix} ${project.title} ${dictionary.projects.viewOnGitHubSuffix}`}
                         >
                           <svg
                             width="16"

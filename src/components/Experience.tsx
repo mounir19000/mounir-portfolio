@@ -1,16 +1,17 @@
 import SectionReveal from "./SectionReveal";
 import { experience, education, certifications, volunteering } from "@/data/portfolio";
+import type { Dictionary } from "@/i18n/messages/types";
 
-export default function Experience() {
+export default function Experience({ dictionary }: { dictionary: Dictionary }) {
   return (
     <section id="experience" className="py-24 lg:py-32 bg-slate-mtx/30">
       <div className="mx-auto max-w-7xl px-6 lg:px-12">
         <SectionReveal>
           <p className="font-mono text-sm text-kinetic-cyan tracking-widest uppercase mb-3">
-            Experience
+            {dictionary.experience.eyebrow}
           </p>
           <h2 className="font-heading text-3xl sm:text-4xl font-bold mb-12">
-            Where I&apos;ve Worked
+            {dictionary.experience.title}
           </h2>
         </SectionReveal>
 
@@ -55,7 +56,7 @@ export default function Experience() {
           <SectionReveal delay={0.1}>
             <div>
               <p className="font-mono text-sm text-neon-violet tracking-widest uppercase mb-3">
-                Education
+                {dictionary.experience.educationLabel}
               </p>
               <h3 className="font-heading text-xl font-bold mb-1">
                 {education.school}
@@ -83,7 +84,7 @@ export default function Experience() {
             <SectionReveal delay={0.15}>
               <div>
                 <p className="font-mono text-sm text-neon-violet tracking-widest uppercase mb-3">
-                  Certifications
+                  {dictionary.experience.certificationsLabel}
                 </p>
                 <div className="space-y-3">
                   {certifications.map((cert) => (
@@ -106,7 +107,7 @@ export default function Experience() {
             <SectionReveal delay={0.2}>
               <div>
                 <p className="font-mono text-sm text-neon-violet tracking-widest uppercase mb-3">
-                  Community
+                  {dictionary.experience.communityLabel}
                 </p>
                 <div className="p-4 bg-obsidian border border-grid-line rounded-lg">
                   <div className="flex items-baseline gap-2 mb-1">
