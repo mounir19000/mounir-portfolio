@@ -19,7 +19,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
   return (
     <>
       <Navigation dictionary={dictionary} lang={lang} />
-      <main>
+      <main id="main-content">
         <Hero dictionary={dictionary} />
         <About dictionary={dictionary} />
         <Experience dictionary={dictionary} />

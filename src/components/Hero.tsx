@@ -1,18 +1,20 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { identity } from "@/data/portfolio";
 import type { Dictionary } from "@/i18n/messages/types";
 
 export default function Hero({ dictionary }: { dictionary: Dictionary }) {
+  const prefersReducedMotion = useReducedMotion();
+
   return (
     <section className="relative min-h-screen flex items-center justify-center grid-bg overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-obsidian/50 via-transparent to-obsidian pointer-events-none" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-12 py-32 text-center">
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={prefersReducedMotion ? false : { opacity: 0, y: 20 }}
+          animate={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="font-mono text-sm text-kinetic-cyan tracking-widest uppercase mb-6"
         >
@@ -20,8 +22,8 @@ export default function Hero({ dictionary }: { dictionary: Dictionary }) {
         </motion.p>
 
         <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={prefersReducedMotion ? false : { opacity: 0, y: 30 }}
+          animate={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
           transition={{
             duration: 0.6,
             delay: 0.1,
@@ -40,8 +42,8 @@ export default function Hero({ dictionary }: { dictionary: Dictionary }) {
         </motion.h1>
 
         <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={prefersReducedMotion ? false : { opacity: 0, y: 30 }}
+          animate={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
           transition={{
             duration: 0.6,
             delay: 0.2,
@@ -53,8 +55,8 @@ export default function Hero({ dictionary }: { dictionary: Dictionary }) {
         </motion.p>
 
         <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={prefersReducedMotion ? false : { opacity: 0, y: 30 }}
+          animate={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
           transition={{
             duration: 0.6,
             delay: 0.3,
@@ -66,8 +68,8 @@ export default function Hero({ dictionary }: { dictionary: Dictionary }) {
         </motion.p>
 
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={prefersReducedMotion ? false : { opacity: 0, y: 30 }}
+          animate={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
           transition={{
             duration: 0.6,
             delay: 0.4,
@@ -77,7 +79,7 @@ export default function Hero({ dictionary }: { dictionary: Dictionary }) {
         >
           <a
             href="#projects"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-kinetic-cyan/10 border border-kinetic-cyan/30 text-kinetic-cyan rounded-lg font-medium text-sm hover:bg-kinetic-cyan/20 transition-all duration-200"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-kinetic-cyan/10 border border-kinetic-cyan/30 text-kinetic-cyan rounded-lg font-medium text-sm hover:bg-kinetic-cyan/20 transition-all duration-200 min-h-11"
           >
             {dictionary.hero.ctaProjects}
             <svg
@@ -95,7 +97,7 @@ export default function Hero({ dictionary }: { dictionary: Dictionary }) {
             href={identity.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-slate-mtx border border-grid-line text-white rounded-lg font-medium text-sm hover:border-text-secondary/50 transition-all duration-200"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-slate-mtx border border-grid-line text-white rounded-lg font-medium text-sm hover:border-text-secondary/50 transition-all duration-200 min-h-11"
           >
             <svg
               width="16"
@@ -111,7 +113,7 @@ export default function Hero({ dictionary }: { dictionary: Dictionary }) {
             href={identity.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-slate-mtx border border-grid-line text-white rounded-lg font-medium text-sm hover:border-text-secondary/50 transition-all duration-200"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-slate-mtx border border-grid-line text-white rounded-lg font-medium text-sm hover:border-text-secondary/50 transition-all duration-200 min-h-11"
           >
             <svg
               width="16"
@@ -128,8 +130,12 @@ export default function Hero({ dictionary }: { dictionary: Dictionary }) {
 
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
         <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          animate={prefersReducedMotion ? undefined : { y: [0, 8, 0] }}
+          transition={
+            prefersReducedMotion
+              ? undefined
+              : { duration: 2, repeat: Infinity, ease: "easeInOut" }
+          }
           className="w-5 h-8 rounded-full border-2 border-text-secondary/30 flex items-start justify-center p-1.5"
         >
           <div className="w-1 h-2 rounded-full bg-text-secondary/50" />

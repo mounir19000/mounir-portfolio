@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useId } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import SectionReveal from "./SectionReveal";
 import { identity } from "@/data/portfolio";
@@ -16,6 +16,7 @@ function CopyButton({
   copiedLabel: string;
 }) {
   const [copied, setCopied] = useState(false);
+  const statusId = useId();
 
   const handleCopy = useCallback(async () => {
     try {
@@ -37,6 +38,8 @@ function CopyButton({
   return (
     <button
       onClick={handleCopy}
+      type="button"
+      aria-describedby={copied ? statusId : undefined}
       className="group relative flex items-center gap-3 px-4 py-3 bg-slate-mtx border border-grid-line rounded-lg hover:border-kinetic-cyan/30 transition-all duration-200 w-full text-left"
     >
       <span className="text-text-secondary text-sm font-mono">{label}</span>
@@ -44,6 +47,8 @@ function CopyButton({
       <AnimatePresence mode="wait">
         {copied ? (
           <motion.span
+            id={statusId}
+            aria-live="polite"
             key="check"
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
@@ -135,7 +140,7 @@ export default function Contact({ dictionary }: { dictionary: Dictionary }) {
                 href={identity.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-3 bg-slate-mtx border border-grid-line rounded-lg hover:border-kinetic-cyan/30 transition-all duration-200 text-sm text-text-secondary hover:text-white"
+                className="flex items-center gap-2 px-4 py-3 bg-slate-mtx border border-grid-line rounded-lg hover:border-kinetic-cyan/30 transition-all duration-200 text-sm text-text-secondary hover:text-white min-h-11"
               >
                 <svg
                   width="16"
@@ -151,7 +156,7 @@ export default function Contact({ dictionary }: { dictionary: Dictionary }) {
                 href={identity.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-3 bg-slate-mtx border border-grid-line rounded-lg hover:border-neon-violet/30 transition-all duration-200 text-sm text-text-secondary hover:text-white"
+                className="flex items-center gap-2 px-4 py-3 bg-slate-mtx border border-grid-line rounded-lg hover:border-neon-violet/30 transition-all duration-200 text-sm text-text-secondary hover:text-white min-h-11"
               >
                 <svg
                   width="16"

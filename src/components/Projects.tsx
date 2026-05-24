@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { projects, type Track } from "@/data/portfolio";
 import type { Dictionary } from "@/i18n/messages/types";
 
@@ -44,6 +44,7 @@ function getTrackColor(track: Track) {
 
 export default function Projects({ dictionary }: { dictionary: Dictionary }) {
   const [active, setActive] = useState<Filter>("all");
+  const prefersReducedMotion = useReducedMotion();
 
   const filtered =
     active === "all" ? projects : projects.filter((p) => p.track === active);
@@ -58,11 +59,15 @@ export default function Projects({ dictionary }: { dictionary: Dictionary }) {
           {dictionary.projects.title}
         </h2>
 
-        <div className="flex flex-wrap gap-2 mb-10">
+        <div className="flex flex-wrap gap-2 mb-10" role="tablist" aria-label="Project filters">
           {filters.map((f) => (
             <button
               key={f.value}
               onClick={() => setActive(f.value)}
+              type="button"
+              role="tab"
+              aria-selected={active === f.value}
+              aria-controls="projects-grid"
               className={`px-4 py-2 rounded-lg font-mono text-sm transition-all duration-200 ${
                 active === f.value
                   ? f.value === "all"
@@ -80,7 +85,7 @@ export default function Projects({ dictionary }: { dictionary: Dictionary }) {
           ))}
         </div>
 
-        <motion.div layout className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <motion.div id="projects-grid" layout className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           <AnimatePresence mode="popLayout">
             {filtered.map((project) => {
               const colors = getTrackColor(project.track);
@@ -88,10 +93,14 @@ export default function Projects({ dictionary }: { dictionary: Dictionary }) {
                 <motion.div
                   key={project.title}
                   layout
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                  initial={prefersReducedMotion ? false : { opacity: 0, scale: 0.95 }}
+                  animate={prefersReducedMotion ? undefined : { opacity: 1, scale: 1 }}
+                  exit={prefersReducedMotion ? undefined : { opacity: 0, scale: 0.95 }}
+                  transition={
+                    prefersReducedMotion
+                      ? undefined
+                      : { duration: 0.3, ease: [0.16, 1, 0.3, 1] }
+                  }
                 >
                   <div
                     className={`group relative p-5 rounded-xl bg-slate-mtx border ${colors.border} ${colors.glow} transition-all duration-300 hover:-translate-y-1 h-full flex flex-col`}
