@@ -38,6 +38,7 @@ const en: Dictionary = {
     ctaProjects: "View Projects",
     github: "GitHub",
     linkedin: "LinkedIn",
+    typingRoles: ["AI/ML Enthusiast", "Front-End Developer", "UI/UX Designer"],
   },
   about: {
     eyebrow: "About",

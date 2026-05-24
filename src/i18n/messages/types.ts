@@ -18,6 +18,7 @@ export interface Dictionary {
     ctaProjects: string;
     github: string;
     linkedin: string;
+    typingRoles: string[];
   };
   about: {
     eyebrow: string;

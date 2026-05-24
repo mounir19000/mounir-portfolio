@@ -1,11 +1,58 @@
 "use client";
 
+import { useEffect, useMemo, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { identity } from "@/data/portfolio";
 import type { Dictionary } from "@/i18n/messages/types";
 
 export default function Hero({ dictionary }: { dictionary: Dictionary }) {
   const prefersReducedMotion = useReducedMotion();
+  const roles = useMemo(
+    () =>
+      dictionary.hero.typingRoles.length > 0
+        ? dictionary.hero.typingRoles
+        : [identity.role],
+    [dictionary.hero.typingRoles],
+  );
+  const [roleIndex, setRoleIndex] = useState(0);
+  const [typedText, setTypedText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    if (prefersReducedMotion) return;
+
+    const currentRole = roles[roleIndex];
+    const typingSpeed = isDeleting ? 35 : 70;
+    const completedTyping = typedText === currentRole;
+    const completedDeleting = typedText === "";
+    const pause =
+      completedTyping && !isDeleting
+        ? 1200
+        : completedDeleting && isDeleting
+          ? 250
+          : typingSpeed;
+
+    const timeout = window.setTimeout(() => {
+      if (completedTyping && !isDeleting) {
+        setIsDeleting(true);
+        return;
+      }
+
+      if (completedDeleting && isDeleting) {
+        setIsDeleting(false);
+        setRoleIndex((prev) => (prev + 1) % roles.length);
+        return;
+      }
+
+      setTypedText((prev) =>
+        isDeleting
+          ? prev.slice(0, -1)
+          : currentRole.slice(0, prev.length + 1),
+      );
+    }, pause);
+
+    return () => window.clearTimeout(timeout);
+  }, [isDeleting, prefersReducedMotion, roleIndex, roles, typedText]);
 
   return (
     <section className="relative min-h-screen flex items-center justify-center grid-bg overflow-hidden">
@@ -51,7 +98,16 @@ export default function Hero({ dictionary }: { dictionary: Dictionary }) {
           }}
           className="font-body text-lg sm:text-xl text-text-secondary max-w-2xl mx-auto mb-4"
         >
-          {identity.role}
+          {prefersReducedMotion ? (
+            roles[0]
+          ) : (
+            <span className="inline-flex items-center gap-1" aria-live="polite">
+              <span>{typedText}</span>
+              <span className="text-kinetic-cyan/90" aria-hidden="true">
+                |
+              </span>
+            </span>
+          )}
         </motion.p>
 
         <motion.p
