@@ -103,6 +103,7 @@ export default function Navigation({ dictionary, lang }: NavigationProps) {
             fill="none"
             stroke="currentColor"
             strokeWidth="2"
+            suppressHydrationWarning
           >
             {mobileOpen ? (
               <path d="M6 6l12 12M6 18L18 6" />

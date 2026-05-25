@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Inter, Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -17,6 +18,17 @@ const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
 });
 
+export const metadata: Metadata = {
+  verification: {
+    google: "8RYGUksBXP60GUzRP7TzltDVKOs14C9gHNoLdS3fmRs",
+  },
+  icons: {
+    icon: [{ url: "/favicon.ico", sizes: "any", type: "image/x-icon" }],
+    shortcut: [{ url: "/favicon.ico", type: "image/x-icon" }],
+    apple: [{ url: "/favicon.ico" }],
+  },
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -26,6 +38,7 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${inter.variable} ${plusJakarta.variable} ${jetbrainsMono.variable} antialiased`}
+      suppressHydrationWarning
     >
       <body suppressHydrationWarning>{children}</body>
     </html>

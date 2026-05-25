@@ -124,6 +124,7 @@ export default function Projects({ dictionary }: { dictionary: Dictionary }) {
                             fill="none"
                             stroke="currentColor"
                             strokeWidth="1.5"
+                            suppressHydrationWarning
                           >
                             <path d="M6 3h7v7M13 3L6 10" />
                           </svg>
