@@ -27,7 +27,7 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${plusJakarta.variable} ${jetbrainsMono.variable} antialiased`}
     >
-      <body>{children}</body>
+      <body suppressHydrationWarning>{children}</body>
     </html>
   );
 }

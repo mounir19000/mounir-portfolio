@@ -117,13 +117,13 @@ export default function Contact({ dictionary }: { dictionary: Dictionary }) {
           <h2 className="font-heading text-3xl sm:text-4xl font-bold mb-4">
             {dictionary.contact.title}
           </h2>
-          <p className="text-text-secondary mb-10 max-w-xl">
+          <p className="text-text-secondary mb-10 w-full">
             {dictionary.contact.subtitle}
           </p>
         </SectionReveal>
 
         <SectionReveal delay={0.1}>
-          <div className="max-w-lg space-y-3">
+          <div className="mx-auto w-full max-w-2xl space-y-3">
             <CopyButton
               label={dictionary.contact.emailLabel}
               text={identity.email}
@@ -135,12 +135,12 @@ export default function Contact({ dictionary }: { dictionary: Dictionary }) {
               copiedLabel={dictionary.contact.copied}
             />
 
-            <div className="flex gap-3 pt-4">
+            <div className="flex flex-wrap justify-center gap-3 pt-4">
               <a
                 href={identity.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-3 bg-slate-mtx border border-grid-line rounded-lg hover:border-kinetic-cyan/30 transition-all duration-200 text-sm text-text-secondary hover:text-white min-h-11"
+                className="flex min-w-[140px] items-center justify-center gap-2 px-4 py-3 bg-slate-mtx border border-grid-line rounded-lg hover:border-kinetic-cyan/30 transition-all duration-200 text-sm text-text-secondary hover:text-white min-h-11"
               >
                 <svg
                   width="16"
@@ -156,7 +156,7 @@ export default function Contact({ dictionary }: { dictionary: Dictionary }) {
                 href={identity.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-3 bg-slate-mtx border border-grid-line rounded-lg hover:border-neon-violet/30 transition-all duration-200 text-sm text-text-secondary hover:text-white min-h-11"
+                className="flex min-w-[140px] items-center justify-center gap-2 px-4 py-3 bg-slate-mtx border border-grid-line rounded-lg hover:border-neon-violet/30 transition-all duration-200 text-sm text-text-secondary hover:text-white min-h-11"
               >
                 <svg
                   width="16"

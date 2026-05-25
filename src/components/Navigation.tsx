@@ -45,12 +45,12 @@ export default function Navigation({ dictionary, lang }: NavigationProps) {
         >
           Skip to content
         </a>
-        <a
+        <Link
           href={`/${lang}`}
           className="font-mono text-sm text-kinetic-cyan tracking-wider hover:text-white transition-colors rounded-sm"
         >
           mounir19000
-        </a>
+        </Link>
 
         <div className="hidden md:flex items-center gap-6">
           {dictionary.navigation.links.map((link) => (
@@ -62,20 +62,31 @@ export default function Navigation({ dictionary, lang }: NavigationProps) {
               {link.label}
             </a>
           ))}
-          <label className="sr-only" htmlFor="lang-switcher-desktop">
-            {dictionary.navigation.languageLabel}
-          </label>
-          <select
-            id="lang-switcher-desktop"
-            value={lang}
-            onChange={(event) => {
-              window.location.href = `/${event.target.value}`;
-            }}
-            className="bg-slate-mtx border border-grid-line rounded px-2.5 py-1.5 text-xs text-text-secondary hover:text-white focus-visible:text-white"
-          >
-            <option value="en">{dictionary.navigation.languageOptions.en}</option>
-            <option value="fr">{dictionary.navigation.languageOptions.fr}</option>
-          </select>
+          <div className="inline-flex items-center gap-1 rounded-full border border-grid-line bg-slate-mtx/80 p-1 shadow-[0_0_0_1px_rgba(148,163,184,0.06)]">
+            <span className="sr-only">{dictionary.navigation.languageLabel}</span>
+            <Link
+              href="/en"
+              className={`px-3 py-1.5 rounded-full text-xs font-mono transition-all duration-200 ${
+                lang === "en"
+                  ? "bg-kinetic-cyan/15 text-kinetic-cyan border border-kinetic-cyan/30"
+                  : "text-text-secondary hover:text-white border border-transparent hover:border-grid-line"
+              }`}
+              aria-current={lang === "en" ? "page" : undefined}
+            >
+              {dictionary.navigation.languageOptions.en}
+            </Link>
+            <Link
+              href="/fr"
+              className={`px-3 py-1.5 rounded-full text-xs font-mono transition-all duration-200 ${
+                lang === "fr"
+                  ? "bg-kinetic-cyan/15 text-kinetic-cyan border border-kinetic-cyan/30"
+                  : "text-text-secondary hover:text-white border border-transparent hover:border-grid-line"
+              }`}
+              aria-current={lang === "fr" ? "page" : undefined}
+            >
+              {dictionary.navigation.languageOptions.fr}
+            </Link>
+          </div>
         </div>
 
         <button
@@ -117,24 +128,26 @@ export default function Navigation({ dictionary, lang }: NavigationProps) {
               {link.label}
             </a>
           ))}
-          <div className="pt-2 flex gap-2">
+          <div className="pt-2 inline-flex items-center gap-1 rounded-full border border-grid-line bg-slate-mtx/80 p-1">
             <Link
               href="/en"
-              className={`px-3 py-1.5 rounded border text-xs font-mono ${
+              className={`px-3 py-1.5 rounded-full border text-xs font-mono transition-all duration-200 ${
                 lang === "en"
-                  ? "border-kinetic-cyan/40 text-kinetic-cyan"
-                  : "border-grid-line text-text-secondary"
+                  ? "border-kinetic-cyan/40 bg-kinetic-cyan/10 text-kinetic-cyan"
+                  : "border-transparent text-text-secondary hover:text-white hover:border-grid-line"
               }`}
+              aria-current={lang === "en" ? "page" : undefined}
             >
               {dictionary.navigation.languageOptions.en}
             </Link>
             <Link
               href="/fr"
-              className={`px-3 py-1.5 rounded border text-xs font-mono ${
+              className={`px-3 py-1.5 rounded-full border text-xs font-mono transition-all duration-200 ${
                 lang === "fr"
-                  ? "border-kinetic-cyan/40 text-kinetic-cyan"
-                  : "border-grid-line text-text-secondary"
+                  ? "border-kinetic-cyan/40 bg-kinetic-cyan/10 text-kinetic-cyan"
+                  : "border-transparent text-text-secondary hover:text-white hover:border-grid-line"
               }`}
+              aria-current={lang === "fr" ? "page" : undefined}
             >
               {dictionary.navigation.languageOptions.fr}
             </Link>

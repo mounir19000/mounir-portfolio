@@ -14,6 +14,10 @@ export default function Hero({ dictionary }: { dictionary: Dictionary }) {
         : [identity.role],
     [dictionary.hero.typingRoles],
   );
+  const maxRoleLength = useMemo(
+    () => roles.reduce((max, role) => Math.max(max, role.length), 0),
+    [roles],
+  );
   const [roleIndex, setRoleIndex] = useState(0);
   const [typedText, setTypedText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
@@ -56,6 +60,20 @@ export default function Hero({ dictionary }: { dictionary: Dictionary }) {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center grid-bg overflow-hidden">
+      <motion.div
+        aria-hidden="true"
+        className="pointer-events-none absolute -right-20 bottom-12 h-80 w-80 rounded-full bg-neon-violet/14 blur-3xl"
+        animate={
+          prefersReducedMotion
+            ? undefined
+            : { x: [0, -28, 20, 0], y: [0, 16, -20, 0] }
+        }
+        transition={
+          prefersReducedMotion
+            ? undefined
+            : { duration: 24, repeat: Infinity, ease: "easeInOut" }
+        }
+      />
       <div className="absolute inset-0 bg-gradient-to-b from-obsidian/50 via-transparent to-obsidian pointer-events-none" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-12 py-32 text-center">
@@ -96,13 +114,19 @@ export default function Hero({ dictionary }: { dictionary: Dictionary }) {
             delay: 0.2,
             ease: [0.16, 1, 0.3, 1],
           }}
-          className="font-body text-lg sm:text-xl text-text-secondary max-w-2xl mx-auto mb-4"
+          className="font-body text-lg sm:text-xl text-text-secondary max-w-2xl mx-auto mb-4 min-h-7"
         >
           {prefersReducedMotion ? (
             roles[0]
           ) : (
-            <span className="inline-flex items-center gap-1" aria-live="polite">
-              <span>{typedText}</span>
+            <span
+              className="inline-flex items-center justify-center gap-1 font-mono"
+              aria-live="polite"
+              style={{ minWidth: `${Math.max(1, maxRoleLength) + 1}ch` }}
+            >
+              <span className="inline-block text-left whitespace-nowrap">
+                {typedText || "\u00A0"}
+              </span>
               <span className="text-kinetic-cyan/90" aria-hidden="true">
                 |
               </span>
