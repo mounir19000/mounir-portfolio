@@ -1,5 +1,4 @@
 import SectionReveal from "./SectionReveal";
-import { experience, education, certifications, volunteering } from "@/data/portfolio";
 import type { Dictionary } from "@/i18n/messages/types";
 
 export default function Experience({ dictionary }: { dictionary: Dictionary }) {
@@ -16,7 +15,7 @@ export default function Experience({ dictionary }: { dictionary: Dictionary }) {
         </SectionReveal>
 
         <div className="space-y-8 mb-20">
-          {experience.map((exp, i) => (
+          {dictionary.experience.items.map((exp, i) => (
             <SectionReveal key={exp.company} delay={0.1 + i * 0.08}>
               <div className="relative pl-8 border-l-2 border-grid-line hover:border-kinetic-cyan/50 transition-colors duration-300">
                 <div className="absolute left-[-5px] top-2 w-2 h-2 rounded-full bg-kinetic-cyan" />
@@ -59,16 +58,16 @@ export default function Experience({ dictionary }: { dictionary: Dictionary }) {
                 {dictionary.experience.educationLabel}
               </p>
               <h3 className="font-heading text-xl font-bold mb-1">
-                {education.school}
+                {dictionary.experience.education.school}
               </h3>
               <p className="text-text-secondary text-sm mb-1">
-                {education.degree}
+                {dictionary.experience.education.degree}
               </p>
               <p className="font-mono text-xs text-text-secondary/60 mb-4">
-                {education.period}
+                {dictionary.experience.education.period}
               </p>
               <div className="flex flex-wrap gap-2">
-                {education.coursework.map((course) => (
+                {dictionary.experience.education.coursework.map((course) => (
                   <span
                     key={course}
                     className="px-2.5 py-1 text-xs font-mono text-text-secondary bg-obsidian border border-grid-line rounded"
@@ -87,7 +86,7 @@ export default function Experience({ dictionary }: { dictionary: Dictionary }) {
                   {dictionary.experience.certificationsLabel}
                 </p>
                 <div className="space-y-3">
-                  {certifications.map((cert) => (
+                  {dictionary.experience.certifications.map((cert) => (
                     <div
                       key={cert.name}
                       className="flex items-center justify-between p-3 bg-obsidian border border-grid-line rounded-lg"
@@ -112,17 +111,17 @@ export default function Experience({ dictionary }: { dictionary: Dictionary }) {
                 <div className="p-4 bg-obsidian border border-grid-line rounded-lg">
                   <div className="flex items-baseline gap-2 mb-1">
                     <h4 className="text-sm font-bold text-white">
-                      {volunteering.role}
+                      {dictionary.experience.community.role}
                     </h4>
                     <span className="text-sm text-neon-violet">
-                      — {volunteering.org}
+                      — {dictionary.experience.community.org}
                     </span>
                   </div>
                   <p className="font-mono text-xs text-text-secondary/60 mb-2">
-                    {volunteering.period}
+                    {dictionary.experience.community.period}
                   </p>
                   <p className="text-text-secondary text-sm leading-relaxed">
-                    {volunteering.description}
+                    {dictionary.experience.community.description}
                   </p>
                 </div>
               </div>

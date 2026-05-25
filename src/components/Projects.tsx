@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
-import { projects, type Track } from "@/data/portfolio";
 import type { Dictionary } from "@/i18n/messages/types";
 
 type Filter = "all" | "ai" | "frontend" | "hpc" | "tools";
@@ -15,7 +14,7 @@ const filters: { key: keyof Dictionary["projects"]["filters"]; value: Filter; ac
   { key: "tools", value: "tools", accent: "text-text-secondary" },
 ];
 
-function getTrackColor(track: Track) {
+function getTrackColor(track: Dictionary["projects"]["items"][number]["track"]) {
   switch (track) {
     case "ai":
     case "hpc":
@@ -47,7 +46,9 @@ export default function Projects({ dictionary }: { dictionary: Dictionary }) {
   const prefersReducedMotion = useReducedMotion();
 
   const filtered =
-    active === "all" ? projects : projects.filter((p) => p.track === active);
+    active === "all"
+      ? dictionary.projects.items
+      : dictionary.projects.items.filter((p) => p.track === active);
 
   return (
     <section id="projects" className="py-24 lg:py-32">
@@ -59,7 +60,11 @@ export default function Projects({ dictionary }: { dictionary: Dictionary }) {
           {dictionary.projects.title}
         </h2>
 
-        <div className="flex flex-wrap gap-2 mb-10" role="tablist" aria-label="Project filters">
+        <div
+          className="flex flex-wrap gap-2 mb-10"
+          role="tablist"
+          aria-label={dictionary.projects.filtersAriaLabel}
+        >
           {filters.map((f) => (
             <button
               key={f.value}

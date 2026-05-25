@@ -1,5 +1,4 @@
 import SectionReveal from "./SectionReveal";
-import { aboutShort, tracks, sideTrack } from "@/data/portfolio";
 import type { Dictionary } from "@/i18n/messages/types";
 
 export default function About({ dictionary }: { dictionary: Dictionary }) {
@@ -17,12 +16,12 @@ export default function About({ dictionary }: { dictionary: Dictionary }) {
 
         <SectionReveal delay={0.1}>
           <p className="font-body text-text-secondary text-lg leading-relaxed max-w-3xl mb-12">
-            {aboutShort}
+            {dictionary.about.summary}
           </p>
         </SectionReveal>
 
         <div className="grid md:grid-cols-2 gap-6 mb-8">
-          {tracks.map((track, i) => (
+          {dictionary.about.tracks.map((track, i) => (
             <SectionReveal key={track.name} delay={0.15 + i * 0.1}>
               <div
                 className={`p-6 rounded-xl ${
@@ -59,7 +58,7 @@ export default function About({ dictionary }: { dictionary: Dictionary }) {
 
         <SectionReveal delay={0.35}>
           <p className="text-text-secondary/70 text-sm max-w-3xl">
-            {sideTrack}
+            {dictionary.about.sideTrack}
           </p>
         </SectionReveal>
       </div>

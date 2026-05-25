@@ -1,5 +1,4 @@
 import SectionReveal from "./SectionReveal";
-import { hackathons } from "@/data/portfolio";
 import type { Dictionary } from "@/i18n/messages/types";
 
 function getRankStyle(rank: number) {
@@ -41,7 +40,7 @@ export default function Hackathons({ dictionary }: { dictionary: Dictionary }) {
         </SectionReveal>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {hackathons.map((h, i) => {
+          {dictionary.hackathons.items.map((h, i) => {
             const style = getRankStyle(h.rank);
             return (
               <SectionReveal key={h.event} delay={0.1 + i * 0.08}>

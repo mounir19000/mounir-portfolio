@@ -144,7 +144,7 @@ export default function Hero({ dictionary }: { dictionary: Dictionary }) {
           }}
           className="font-mono text-sm text-text-secondary/70 mb-10"
         >
-          {identity.school} · {identity.location}
+          {dictionary.hero.school} · {dictionary.hero.location}
         </motion.p>
 
         <motion.div

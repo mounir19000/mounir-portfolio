@@ -31,7 +31,7 @@ export default function Navigation({ dictionary, lang }: NavigationProps) {
 
   return (
     <nav
-      aria-label="Primary"
+      aria-label={dictionary.navigation.primaryAriaLabel}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
           ? "bg-obsidian/80 backdrop-blur-xl border-b border-grid-line"
@@ -43,7 +43,7 @@ export default function Navigation({ dictionary, lang }: NavigationProps) {
           href="#main-content"
           className="sr-only focus:not-sr-only focus:absolute focus:left-6 focus:top-3 px-3 py-2 rounded bg-obsidian border border-kinetic-cyan text-kinetic-cyan text-xs font-mono"
         >
-          Skip to content
+          {dictionary.navigation.skipToContent}
         </a>
         <Link
           href={`/${lang}`}
