@@ -36,31 +36,31 @@ export const identity = {
   linkedin:
     "https://www.linkedin.com/in/mostefai-mounir-sofiane-4130742a7/",
   oneLiner:
-    "AI + Front-End engineer in training. From data and models to deployed APIs and polished interfaces.",
-  role: "AI & ML Engineer · Front-End Developer · UI/UX Designer",
+    "AI + front-end engineer in training. From data exploration and models to deployed APIs and polished interfaces.",
+  role: "AI & ML Engineer · Front-end Developer · UI/UX Designer",
   school: "ESI Algiers (ex-INI)",
 };
 
 export const aboutShort =
-  "Computer Science engineering student at ESI Algiers, working at the intersection of machine learning, computer vision, and modern web development. I build AI systems from data exploration to API deployment, ship production front-ends, and compete in datathons and hackathons.";
+  "Engineering student in computer science at ESI Algiers, working at the intersection of machine learning, computer vision, and modern web development. I build AI systems from data exploration to API deployment, ship production front-end interfaces, and compete in datathons and hackathons.";
 
 export const tracks = [
   {
     name: "AI / Machine Learning",
     accent: "cyan" as const,
     description:
-      "Building data-driven systems end-to-end: exploration, modelling, evaluation, and deployment as APIs. Strong interests in computer vision, NLP, recommender systems, adversarial ML, optimization, and edge / on-device inference.",
+      "Building data-driven systems end to end: exploration, modeling, evaluation, and deployment as APIs. Strong interests in computer vision, NLP, recommender systems, adversarial ML, optimization, and edge/on-device inference.",
   },
   {
-    name: "Front-End & UI/UX",
+    name: "Front-end & UI/UX",
     accent: "violet" as const,
     description:
-      "Designing and shipping production interfaces with React, Next.js, Angular, TypeScript, and Tailwind, with a freelance track record — showcase sites, redesigns, and internal tools.",
+      "Designing and shipping production interfaces with React, Next.js, Angular, TypeScript, and Tailwind, backed by freelance experience across showcase sites, redesigns, and internal tools.",
   },
 ];
 
 export const sideTrack =
-  "I also have a serious side track in HPC, networking, and DevOps: CUDA parallelization, datacenter design (spine-leaf, eBGP, ECMP), virtualization, and Linux systems.";
+  "I also work across HPC, networking, and DevOps: CUDA parallelization, data center design (spine-leaf, eBGP, ECMP), virtualization, and Linux systems.";
 
 export const experience: Experience[] = [
   {
@@ -68,9 +68,9 @@ export const experience: Experience[] = [
     company: "Student Spec Insights — ESI Algiers",
     period: "Sept. – Oct. 2025",
     bullets: [
-      "Built an end-to-end AI recommendation system for 4th-year specialization choices, used by 750+ students.",
+      "Built an end-to-end AI recommendation system for fourth-year specialization choices, used by 750+ students.",
       "Collected and analyzed 5+ years of academic data; implemented PCA and clustering modules.",
-      "Delivered interactive dashboards that reduced analysis time by 80% for teachers and researchers.",
+      "Delivered interactive dashboards that reduced analysis time by 80% for instructors and researchers.",
     ],
     stack: "Python, FastAPI, SQLAlchemy, React, TypeScript, Tailwind",
   },
@@ -79,18 +79,18 @@ export const experience: Experience[] = [
     company: "Windsor School",
     period: "Feb. 2025",
     bullets: [
-      "Complete UI/UX redesign of the school's showcase website.",
+      "Completed a full UI/UX redesign of the school's showcase website.",
       "Reconstructed the information architecture, user journey, and responsive front-end integration.",
     ],
   },
   {
-    role: "Freelance Front-End Developer",
+    role: "Freelance Front-end Developer",
     company: "EURL Ksentini",
     period: "Sept. 2024",
     bullets: [
       "Designed and delivered a turnkey showcase website with Next.js, optimized for SEO and performance.",
-      "Handled end-to-end technical management: hosting, DNS, professional emails.",
-      "Achieved Top 3 Google ranking and Lighthouse 94%.",
+      "Handled end-to-end technical management: hosting, DNS, and professional email setup.",
+      "Achieved a top-three Google ranking and a Lighthouse score of 94/100.",
     ],
     stack: "Next.js, SEO, DNS",
   },
@@ -99,9 +99,9 @@ export const experience: Experience[] = [
 export const projects: Project[] = [
   {
     title: "Road Sign Detection",
-    period: "Apr. 2026 → Present",
+    period: "Apr. – Jun. 2026",
     description:
-      "Deep learning pipeline for autonomous-driving scenarios. Optimizing model size and inference speed for IoT deployment on ESP32-class devices.",
+      "Deep learning pipeline for autonomous driving scenarios, optimized for model size and inference speed on ESP32-class IoT devices.",
     tags: ["Computer Vision", "Edge AI", "IoT", "Deep Learning"],
     track: "ai",
   },
@@ -109,7 +109,7 @@ export const projects: Project[] = [
     title: "Adversarial Patch Attack",
     period: "Mar. 2026",
     description:
-      "Universal adversarial patch attack on ResNet-50 using Expectation over Transformation (EOT), trained on real images to fool ImageNet classifiers.",
+      "Universal adversarial patch attack on ResNet-50 using Expectation over Transformation (EOT), trained on real images to mislead ImageNet classifiers.",
     tags: ["Adversarial ML", "ResNet-50", "EOT", "Python"],
     track: "ai",
     link: "https://github.com/mounir19000/adversarial-patch-attack",
@@ -118,7 +118,7 @@ export const projects: Project[] = [
     title: "Clinical Alert Generation",
     period: "Feb. 2026",
     description:
-      "NLP model that generates clinical alerts from patient drug prescriptions with 85% accuracy.",
+      "NLP model that generates clinical alerts from patient medication prescriptions with 85% accuracy.",
     tags: ["NLP", "Healthcare", "Python"],
     track: "ai",
     highlight: "3rd — CSE DataHack 2026",
@@ -127,7 +127,7 @@ export const projects: Project[] = [
     title: "Vehicle Routing with Time Windows",
     period: "2026",
     description:
-      "Optimization challenge: routes, capacity, time windows, and travel cost balanced via heuristics and metaheuristics.",
+      "Optimization challenge balancing routes, capacity, time windows, and travel costs through heuristics and metaheuristics.",
     tags: ["Optimization", "Heuristics", "Python"],
     track: "ai",
     highlight: "3rd — SOAI Haick 2026",
@@ -136,7 +136,7 @@ export const projects: Project[] = [
     title: "AI-Powered Meal Recommendation & Voice Chef",
     period: "Sept. 2025",
     description:
-      "Meal recommendation engine and a voice interface for chefs using speech recognition and intent classification. API-ready services.",
+      "Meal recommendation engine and voice interface for chefs, using speech recognition and intent classification with API-ready services.",
     tags: ["Recommender Systems", "Speech", "FastAPI", "React"],
     track: "ai",
     highlight: "Winner — Future Caravane 2025",
@@ -146,7 +146,7 @@ export const projects: Project[] = [
     title: "BookAise — Book Search & Recommendation",
     period: "2025",
     description:
-      "Book discovery platform: Flutter frontend, FastAPI AI search and recommendation service, semantic book matching with vector-database retrieval.",
+      "Book discovery platform with a Flutter front end, a FastAPI AI search and recommendation service, and semantic book matching through vector database retrieval.",
     tags: ["NLP", "Flutter", "FastAPI", "Vector DB"],
     track: "ai",
     highlight: "4th — MobAI Hackathon",
@@ -156,7 +156,7 @@ export const projects: Project[] = [
     title: "Fish Movement API & Bacteria Counting",
     period: "Jul. 2025",
     description:
-      "Computer-vision services for fish swimming-speed tracking in videos and bacteria detection via YOLOv8 on microscopy images.",
+      "Computer vision services for tracking fish swimming speed in videos and detecting bacteria in microscopy images with YOLOv8.",
     tags: ["YOLOv8", "FastAPI", "Computer Vision", "IoT"],
     track: "ai",
     link: "https://github.com/junction-DataVim/FishMovement-Speed",
@@ -174,7 +174,7 @@ export const projects: Project[] = [
     title: "Student Specialty Insight System",
     period: "2025",
     description:
-      "Full-stack application for analyzing student data and providing intelligent specialty recommendations using machine learning.",
+      "Full-stack application for analyzing student data and providing intelligent specialization recommendations using machine learning.",
     tags: ["React", "FastAPI", "ML", "PCA", "Clustering"],
     track: "ai",
     link: "https://github.com/mounir19000/StudentSpecialtyInsightSystem",
@@ -183,7 +183,7 @@ export const projects: Project[] = [
     title: "MPG Data Analysis (R)",
     period: "2025",
     description:
-      "Statistical analysis of 234 vehicles: univariate, bivariate analysis, and Multiple Correspondence Analysis.",
+      "Statistical analysis of 234 vehicles: univariate and bivariate analyses, plus Multiple Correspondence Analysis.",
     tags: ["R", "Statistics", "MCA"],
     track: "ai",
     link: "https://github.com/mounir19000/mpg-data-analysis-r",
@@ -192,7 +192,7 @@ export const projects: Project[] = [
     title: "Modern Datacenter for ESI",
     period: "Feb. 2026 → Present",
     description:
-      "Spine-leaf topology with eBGP and ECMP. 5 security rings with firewalls, IDS/IPS, and segmentation. NaaS for user access management.",
+      "Spine-leaf topology with eBGP and ECMP, five security rings with firewalls, IDS/IPS, segmentation, and NaaS for user access management.",
     tags: ["Spine-leaf", "eBGP", "ECMP", "IDS/IPS", "NaaS"],
     track: "hpc",
   },
@@ -209,7 +209,7 @@ export const projects: Project[] = [
     title: "Networking Simulations",
     period: "Dec. 2024 – Feb. 2025",
     description:
-      "Deployed OpenSSH and vsftpd, simulated wired networks in Mininet with bandwidth, latency, and packet loss control.",
+      "Deployed OpenSSH and vsftpd, then simulated wired networks in Mininet with bandwidth, latency, and packet loss control.",
     tags: ["Mininet", "OpenSSH", "Networking", "Linux"],
     track: "hpc",
   },
@@ -217,7 +217,7 @@ export const projects: Project[] = [
     title: "AR Food Gallery",
     period: "Sept. 2025",
     description:
-      "Interactive culinary gallery in mobile augmented reality. Winner of Future Caravane hackathon.",
+      "Interactive culinary gallery in mobile augmented reality. Winner of the Future Caravane hackathon.",
     tags: ["React", "Vite", "WebXR", "AR"],
     track: "frontend",
     highlight: "Winner — Future Caravane 2025",
@@ -226,7 +226,7 @@ export const projects: Project[] = [
     title: "WriteUps Bank — Shellmates",
     period: "Apr. – May 2025",
     description:
-      "Internal platform referencing 50+ CTF write-ups with advanced dynamic filters, routing, and optimized Markdown rendering. Deployed on Vercel.",
+      "Internal platform cataloging 50+ CTF write-ups with advanced dynamic filters, routing, and optimized Markdown rendering. Deployed on Vercel.",
     tags: ["Next.js", "TypeScript", "Vercel"],
     track: "frontend",
     link: "https://github.com/mounir19000/ShellmatesWriteUpBank",
@@ -235,7 +235,7 @@ export const projects: Project[] = [
     title: "Electronic Health Record",
     period: "Dec. 2024 – Jan. 2025",
     description:
-      "Front-end Technical Lead on a medical-records prototype with full API integration and Git workflow setup.",
+      "Served as front-end technical lead on a medical records prototype with full API integration and Git workflow setup.",
     tags: ["Angular", "Django", "REST API"],
     track: "frontend",
   },
@@ -243,7 +243,7 @@ export const projects: Project[] = [
     title: "ESI Talents PFE Scraper",
     period: "2025",
     description:
-      "Python scraper that extracts PFE projects, decodes protected promoter emails, and exports to CSV.",
+      "Python scraper that extracts PFE projects, decodes protected supervisor email addresses, and exports the data to CSV.",
     tags: ["Python", "Scraping", "CSV"],
     track: "tools",
     link: "https://github.com/mounir19000/talents-esi-pfe-scraper",
@@ -252,7 +252,7 @@ export const projects: Project[] = [
     title: "JavaCC Parser Workshop",
     period: "2025",
     description:
-      "Lexical analysis and parser development with JavaCC and JFlex: expression parsing, modular parser design.",
+      "Lexical analysis and parser development with JavaCC and JFlex: expression parsing and modular parser design.",
     tags: ["JavaCC", "JFlex", "Compilation"],
     track: "tools",
     link: "https://github.com/mounir19000/javacc-parser",
@@ -273,7 +273,7 @@ export const hackathons: Hackathon[] = [
     event: "Training Camp 2024",
     result: "1st Place",
     rank: 1,
-    description: "Face Recognition for Worker Attendance system",
+    description: "Face recognition system for worker attendance",
   },
   {
     year: 2026,
@@ -287,7 +287,7 @@ export const hackathons: Hackathon[] = [
     event: "SOAI Haick 2026",
     result: "3rd Place",
     rank: 3,
-    description: "Vehicle Routing / Optimization challenge",
+    description: "Vehicle routing and optimization challenge",
   },
   {
     year: 2025,
@@ -310,7 +310,7 @@ export const skills = {
     "Bash",
     "R",
   ],
-  "Front-End / Web": [
+  "Front-end / Web": [
     "React.js",
     "Next.js",
     "Angular",
@@ -349,7 +349,7 @@ export const skills = {
     "Wireshark",
     "Mininet",
   ],
-  "DevOps & Tools": [
+  "DevOps and Tools": [
     "Docker",
     "KVM",
     "VMware",
@@ -381,7 +381,7 @@ export const certifications = [
 export const education = {
   school: "National Higher School of Computer Science (ESI, ex-INI)",
   location: "Algiers, Algeria",
-  degree: "Engineering Degree in Computer Science",
+  degree: "Engineering degree in computer science",
   period: "September 2022 → 2027 (in progress)",
   coursework: [
     "High-Performance Computing",
@@ -391,7 +391,7 @@ export const education = {
     "Computer Networks",
     "Databases / SQL",
     "Compilation (JavaCC / JFlex)",
-    "Statistical Data Analysis (R, MCA/ACM)",
+    "Statistical Data Analysis (R, MCA)",
   ],
 };
 
@@ -401,5 +401,5 @@ export const volunteering = {
   orgDescription: "ESI's Cybersecurity & Dev club",
   period: "Aug. 2025 – Present",
   description:
-    "Overall club management and supervision of the technical aspect (cybersecurity & development). Drove the WriteUps Bank platform for internal CTF knowledge sharing.",
+    "Managed club operations and supervised technical workstreams in cybersecurity and development. Led the WriteUps Bank platform for internal CTF knowledge sharing.",
 };

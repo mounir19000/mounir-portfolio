@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Mostefai Mounir Sofiane — AI & Front-End Engineer";
+export const alt = "Mostefai Mounir Sofiane — AI & Front-end Engineer";
 export const size = {
   width: 1200,
   height: 630,
@@ -54,7 +54,7 @@ export default function OpenGraphImage() {
             lineHeight: 1.2,
           }}
         >
-          AI & Front-End Engineer
+          AI & Front-end Engineer
         </div>
       </div>
     ),
