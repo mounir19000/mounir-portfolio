@@ -131,7 +131,7 @@ const fr: Dictionary = {
     community: {
       role: "Vice-président",
       org: "Club Shellmates",
-      period: "Août 2025 – aujourd'hui",
+      period: "Août 2025 – Juil. 2026",
       description:
         "Gestion globale du club et supervision des volets techniques en cybersécurité et développement. Pilotage de la plateforme WriteUps Bank pour le partage interne de connaissances CTF.",
     },
@@ -150,6 +150,33 @@ const fr: Dictionary = {
     viewOnGitHubPrefix: "Voir",
     viewOnGitHubSuffix: "sur GitHub",
     items: [
+      {
+        title: "Simulation d'architecture datacenter pour l'ESI",
+        period: "Mars – Juil. 2026",
+        description:
+          "Refonte fonctionnelle du datacenter de l'ESI sous ContainerLab : fabric spine-leaf/EVPN-VXLAN, cinq domaines de sécurité, QoS, observabilité, NaaS et automatisation Ansible Arista.",
+        tags: ["ContainerLab", "EVPN/VXLAN", "Arista", "Ansible", "NaaS"],
+        track: "hpc",
+        link: "https://github.com/squareone-team/esi-containerlab-simulation",
+      },
+      {
+        title: "Recherche sémantique & analytique de logs",
+        period: "Mai – Juin 2026",
+        description:
+          "Pipeline big data pour 638k logs OpenSSH : prétraitement Spark, indexation PostgreSQL/pgvector, embeddings Sentence-Transformers, API FastAPI et dashboard Streamlit.",
+        tags: ["Spark", "pgvector", "FastAPI", "Streamlit", "NLP"],
+        track: "ai",
+        link: "https://github.com/TatiYoucef/tp5-log-semantic-search",
+      },
+      {
+        title: "Optimisation Bin Packing avec RL-HGGA",
+        period: "Avr. – Juin 2026",
+        description:
+          "Projet académique d'optimisation du bin packing 1D comparant FFD, HGGA, RL-HGGA et ML-HCSGA, avec sélection d'opérateurs par Q-learning et benchmarks BPPLIB.",
+        tags: ["Optimisation", "Q-learning", "Algorithmes génétiques", "BPPLIB"],
+        track: "ai",
+        link: "https://github.com/mounir19000/rl-hgga-bin-packing",
+      },
       {
         title: "Détection de panneaux routiers",
         period: "Avr. – Juin 2026",
@@ -177,6 +204,15 @@ const fr: Dictionary = {
         highlight: "3e — CSE DataHack 2026",
       },
       {
+        title: "Parallélisation GPU de réseaux de neurones",
+        period: "Janv. 2026",
+        description:
+          "Analyse des goulets d'étranglement mémoire et optimisation de kernels CUDA via tiling, mémoire partagée, transposition et fusion de kernels.",
+        tags: ["CUDA", "HPC", "GPU", "Optimisation mémoire"],
+        track: "hpc",
+        link: "https://github.com/amine-kherroubi/snn-gpu-memory-optimization",
+      },
+      {
         title: "Routage de véhicules avec fenêtres temporelles",
         period: "2026",
         description:
@@ -196,14 +232,13 @@ const fr: Dictionary = {
         link: "https://github.com/208-FutureCaravane/Recommendation_system_for_meals",
       },
       {
-        title: "BookAise — Recherche & recommandation de livres",
-        period: "2025",
+        title: "AR Food Gallery",
+        period: "Sept. 2025",
         description:
-          "Plateforme de découverte de livres : front-end Flutter, service IA FastAPI de recherche et recommandation, et appariement sémantique via base de données vectorielle.",
-        tags: ["NLP", "Flutter", "FastAPI", "Vector DB"],
-        track: "ai",
-        highlight: "4e — MobAI Hackathon",
-        link: "https://github.com/mounir19000/BookAise",
+          "Galerie culinaire interactive en réalité augmentée mobile. Projet lauréat du hackathon Future Caravane.",
+        tags: ["React", "Vite", "WebXR", "AR"],
+        track: "frontend",
+        highlight: "Vainqueur — Future Caravane 2025",
       },
       {
         title: "API de suivi du mouvement des poissons & comptage de bactéries",
@@ -215,13 +250,31 @@ const fr: Dictionary = {
         link: "https://github.com/junction-DataVim/FishMovement-Speed",
       },
       {
-        title: "Reconnaissance faciale pour le suivi de présence",
-        period: "2024",
+        title: "WriteUps Bank — Shellmates",
+        period: "Avr. – Mai 2025",
         description:
-          "Prototype de suivi de présence en temps réel utilisant YOLOv8 pour la détection et ResNet pour la reconnaissance faciale.",
-        tags: ["YOLOv8", "ResNet", "Reconnaissance faciale", "Temps réel"],
+          "Plateforme interne répertoriant plus de 50 write-ups CTF, avec filtres dynamiques avancés, routage et rendu Markdown optimisé. Déployée sur Vercel.",
+        tags: ["Next.js", "TypeScript", "Vercel"],
+        track: "frontend",
+        link: "https://github.com/mounir19000/ShellmatesWriteUpBank",
+      },
+      {
+        title: "Simulations réseau",
+        period: "Déc. 2024 – Fév. 2025",
+        description:
+          "Déploiement d'OpenSSH et de vsftpd, puis simulation de réseaux filaires sous Mininet avec contrôle de la bande passante, de la latence et de la perte de paquets.",
+        tags: ["Mininet", "OpenSSH", "Réseaux", "Linux"],
+        track: "hpc",
+      },
+      {
+        title: "BookAise — Recherche & recommandation de livres",
+        period: "2025",
+        description:
+          "Plateforme de découverte de livres : front-end Flutter, service IA FastAPI de recherche et recommandation, et appariement sémantique via base de données vectorielle.",
+        tags: ["NLP", "Flutter", "FastAPI", "Vector DB"],
         track: "ai",
-        highlight: "1re — Training Camp 2024",
+        highlight: "4e — MobAI Hackathon",
+        link: "https://github.com/mounir19000/BookAise",
       },
       {
         title: "Student Specialty Insight System",
@@ -242,57 +295,6 @@ const fr: Dictionary = {
         link: "https://github.com/mounir19000/mpg-data-analysis-r",
       },
       {
-        title: "Datacenter moderne pour l'ESI",
-        period: "Fév. 2026 → aujourd'hui",
-        description:
-          "Topologie spine-leaf avec eBGP et ECMP. Cinq anneaux de sécurité avec pare-feu, IDS/IPS et segmentation. NaaS pour la gestion des accès utilisateurs.",
-        tags: ["Spine-leaf", "eBGP", "ECMP", "IDS/IPS", "NaaS"],
-        track: "hpc",
-      },
-      {
-        title: "Parallélisation GPU de réseaux de neurones",
-        period: "Janv. 2026",
-        description:
-          "Analyse des goulets d'étranglement mémoire et optimisation de kernels CUDA via tiling, mémoire partagée, transposition et fusion de kernels.",
-        tags: ["CUDA", "HPC", "GPU", "Optimisation mémoire"],
-        track: "hpc",
-        link: "https://github.com/amine-kherroubi/snn-gpu-memory-optimization",
-      },
-      {
-        title: "Simulations réseau",
-        period: "Déc. 2024 – Fév. 2025",
-        description:
-          "Déploiement d'OpenSSH et de vsftpd, puis simulation de réseaux filaires sous Mininet avec contrôle de la bande passante, de la latence et de la perte de paquets.",
-        tags: ["Mininet", "OpenSSH", "Réseaux", "Linux"],
-        track: "hpc",
-      },
-      {
-        title: "AR Food Gallery",
-        period: "Sept. 2025",
-        description:
-          "Galerie culinaire interactive en réalité augmentée mobile. Projet lauréat du hackathon Future Caravane.",
-        tags: ["React", "Vite", "WebXR", "AR"],
-        track: "frontend",
-        highlight: "Vainqueur — Future Caravane 2025",
-      },
-      {
-        title: "WriteUps Bank — Shellmates",
-        period: "Avr. – Mai 2025",
-        description:
-          "Plateforme interne répertoriant plus de 50 write-ups CTF, avec filtres dynamiques avancés, routage et rendu Markdown optimisé. Déployée sur Vercel.",
-        tags: ["Next.js", "TypeScript", "Vercel"],
-        track: "frontend",
-        link: "https://github.com/mounir19000/ShellmatesWriteUpBank",
-      },
-      {
-        title: "Dossier médical électronique",
-        period: "Déc. 2024 – Janv. 2025",
-        description:
-          "Responsable technique front-end sur un prototype de dossier médical avec intégration API complète et mise en place du workflow Git.",
-        tags: ["Angular", "Django", "REST API"],
-        track: "frontend",
-      },
-      {
         title: "Scraper PFE ESI Talents",
         period: "2025",
         description:
@@ -309,6 +311,23 @@ const fr: Dictionary = {
         tags: ["JavaCC", "JFlex", "Compilation"],
         track: "tools",
         link: "https://github.com/mounir19000/javacc-parser",
+      },
+      {
+        title: "Dossier médical électronique",
+        period: "Déc. 2024 – Janv. 2025",
+        description:
+          "Responsable technique front-end sur un prototype de dossier médical avec intégration API complète et mise en place du workflow Git.",
+        tags: ["Angular", "Django", "REST API"],
+        track: "frontend",
+      },
+      {
+        title: "Reconnaissance faciale pour le suivi de présence",
+        period: "2024",
+        description:
+          "Prototype de suivi de présence en temps réel utilisant YOLOv8 pour la détection et ResNet pour la reconnaissance faciale.",
+        tags: ["YOLOv8", "ResNet", "Reconnaissance faciale", "Temps réel"],
+        track: "ai",
+        highlight: "1re — Training Camp 2024",
       },
     ],
   },

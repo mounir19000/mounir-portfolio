@@ -131,7 +131,7 @@ const en: Dictionary = {
     community: {
       role: "Vice-President",
       org: "Shellmates Club",
-      period: "Aug. 2025 – Present",
+      period: "Aug. 2025 – Jul. 2026",
       description:
         "Managed club operations and supervised technical workstreams in cybersecurity and development. Led the WriteUps Bank platform for internal CTF knowledge sharing.",
     },
@@ -150,6 +150,33 @@ const en: Dictionary = {
     viewOnGitHubPrefix: "View",
     viewOnGitHubSuffix: "on GitHub",
     items: [
+      {
+        title: "ESI Data Center Architecture Simulation",
+        period: "Mar. – Jul. 2026",
+        description:
+          "Working ContainerLab redesign of ESI's data center: spine-leaf/EVPN-VXLAN fabric, five security domains, QoS, observability, NaaS, and Arista Ansible automation.",
+        tags: ["ContainerLab", "EVPN/VXLAN", "Arista", "Ansible", "NaaS"],
+        track: "hpc",
+        link: "https://github.com/squareone-team/esi-containerlab-simulation",
+      },
+      {
+        title: "Semantic Log Search & Analytics",
+        period: "May – Jun. 2026",
+        description:
+          "Big-data search pipeline for 638k OpenSSH logs: Spark preprocessing, PostgreSQL/pgvector indexing, sentence-transformer embeddings, FastAPI API, and Streamlit dashboard.",
+        tags: ["Spark", "pgvector", "FastAPI", "Streamlit", "NLP"],
+        track: "ai",
+        link: "https://github.com/TatiYoucef/tp5-log-semantic-search",
+      },
+      {
+        title: "RL-HGGA Bin Packing Optimization",
+        period: "Apr. – Jun. 2026",
+        description:
+          "Academic 1D bin-packing optimization project comparing FFD, HGGA, RL-HGGA, and ML-HCSGA, with Q-learning operator selection and BPPLIB benchmarks.",
+        tags: ["Optimization", "Q-learning", "Genetic Algorithms", "BPPLIB"],
+        track: "ai",
+        link: "https://github.com/mounir19000/rl-hgga-bin-packing",
+      },
       {
         title: "Road Sign Detection",
         period: "Apr. – Jun. 2026",
@@ -177,6 +204,15 @@ const en: Dictionary = {
         highlight: "3rd — CSE DataHack 2026",
       },
       {
+        title: "GPU Parallelization for Neural Networks",
+        period: "Jan. 2026",
+        description:
+          "Analyzed memory bottlenecks and optimized kernels via tiling, shared memory, transposition, and kernel fusion in CUDA.",
+        tags: ["CUDA", "HPC", "GPU", "Memory Optimization"],
+        track: "hpc",
+        link: "https://github.com/amine-kherroubi/snn-gpu-memory-optimization",
+      },
+      {
         title: "Vehicle Routing with Time Windows",
         period: "2026",
         description:
@@ -196,14 +232,13 @@ const en: Dictionary = {
         link: "https://github.com/208-FutureCaravane/Recommendation_system_for_meals",
       },
       {
-        title: "BookAise — Book Search & Recommendation",
-        period: "2025",
+        title: "AR Food Gallery",
+        period: "Sept. 2025",
         description:
-          "Book discovery platform with a Flutter front end, a FastAPI AI search and recommendation service, and semantic book matching through vector database retrieval.",
-        tags: ["NLP", "Flutter", "FastAPI", "Vector DB"],
-        track: "ai",
-        highlight: "4th — MobAI Hackathon",
-        link: "https://github.com/mounir19000/BookAise",
+          "Interactive culinary gallery in mobile augmented reality. Winner of the Future Caravane hackathon.",
+        tags: ["React", "Vite", "WebXR", "AR"],
+        track: "frontend",
+        highlight: "Winner — Future Caravane 2025",
       },
       {
         title: "Fish Movement API & Bacteria Counting",
@@ -215,13 +250,31 @@ const en: Dictionary = {
         link: "https://github.com/junction-DataVim/FishMovement-Speed",
       },
       {
-        title: "Face Recognition for Attendance",
-        period: "2024",
+        title: "WriteUps Bank — Shellmates",
+        period: "Apr. – May 2025",
         description:
-          "Real-time attendance prototype using YOLOv8 for detection and ResNet for face recognition.",
-        tags: ["YOLOv8", "ResNet", "Face Recognition", "Real-time"],
+          "Internal platform cataloging 50+ CTF write-ups with advanced dynamic filters, routing, and optimized Markdown rendering. Deployed on Vercel.",
+        tags: ["Next.js", "TypeScript", "Vercel"],
+        track: "frontend",
+        link: "https://github.com/mounir19000/ShellmatesWriteUpBank",
+      },
+      {
+        title: "Networking Simulations",
+        period: "Dec. 2024 – Feb. 2025",
+        description:
+          "Deployed OpenSSH and vsftpd, then simulated wired networks in Mininet with bandwidth, latency, and packet loss control.",
+        tags: ["Mininet", "OpenSSH", "Networking", "Linux"],
+        track: "hpc",
+      },
+      {
+        title: "BookAise — Book Search & Recommendation",
+        period: "2025",
+        description:
+          "Book discovery platform with a Flutter front end, a FastAPI AI search and recommendation service, and semantic book matching through vector database retrieval.",
+        tags: ["NLP", "Flutter", "FastAPI", "Vector DB"],
         track: "ai",
-        highlight: "1st — Training Camp 2024",
+        highlight: "4th — MobAI Hackathon",
+        link: "https://github.com/mounir19000/BookAise",
       },
       {
         title: "Student Specialty Insight System",
@@ -242,57 +295,6 @@ const en: Dictionary = {
         link: "https://github.com/mounir19000/mpg-data-analysis-r",
       },
       {
-        title: "Modern Datacenter for ESI",
-        period: "Feb. 2026 → Present",
-        description:
-          "Spine-leaf topology with eBGP and ECMP, five security rings with firewalls, IDS/IPS, segmentation, and NaaS for user access management.",
-        tags: ["Spine-leaf", "eBGP", "ECMP", "IDS/IPS", "NaaS"],
-        track: "hpc",
-      },
-      {
-        title: "GPU Parallelization for Neural Networks",
-        period: "Jan. 2026",
-        description:
-          "Analyzed memory bottlenecks and optimized kernels via tiling, shared memory, transposition, and kernel fusion in CUDA.",
-        tags: ["CUDA", "HPC", "GPU", "Memory Optimization"],
-        track: "hpc",
-        link: "https://github.com/amine-kherroubi/snn-gpu-memory-optimization",
-      },
-      {
-        title: "Networking Simulations",
-        period: "Dec. 2024 – Feb. 2025",
-        description:
-          "Deployed OpenSSH and vsftpd, then simulated wired networks in Mininet with bandwidth, latency, and packet loss control.",
-        tags: ["Mininet", "OpenSSH", "Networking", "Linux"],
-        track: "hpc",
-      },
-      {
-        title: "AR Food Gallery",
-        period: "Sept. 2025",
-        description:
-          "Interactive culinary gallery in mobile augmented reality. Winner of the Future Caravane hackathon.",
-        tags: ["React", "Vite", "WebXR", "AR"],
-        track: "frontend",
-        highlight: "Winner — Future Caravane 2025",
-      },
-      {
-        title: "WriteUps Bank — Shellmates",
-        period: "Apr. – May 2025",
-        description:
-          "Internal platform cataloging 50+ CTF write-ups with advanced dynamic filters, routing, and optimized Markdown rendering. Deployed on Vercel.",
-        tags: ["Next.js", "TypeScript", "Vercel"],
-        track: "frontend",
-        link: "https://github.com/mounir19000/ShellmatesWriteUpBank",
-      },
-      {
-        title: "Electronic Health Record",
-        period: "Dec. 2024 – Jan. 2025",
-        description:
-          "Served as front-end technical lead on a medical records prototype with full API integration and Git workflow setup.",
-        tags: ["Angular", "Django", "REST API"],
-        track: "frontend",
-      },
-      {
         title: "ESI Talents PFE Scraper",
         period: "2025",
         description:
@@ -309,6 +311,23 @@ const en: Dictionary = {
         tags: ["JavaCC", "JFlex", "Compilation"],
         track: "tools",
         link: "https://github.com/mounir19000/javacc-parser",
+      },
+      {
+        title: "Electronic Health Record",
+        period: "Dec. 2024 – Jan. 2025",
+        description:
+          "Served as front-end technical lead on a medical records prototype with full API integration and Git workflow setup.",
+        tags: ["Angular", "Django", "REST API"],
+        track: "frontend",
+      },
+      {
+        title: "Face Recognition for Attendance",
+        period: "2024",
+        description:
+          "Real-time attendance prototype using YOLOv8 for detection and ResNet for face recognition.",
+        tags: ["YOLOv8", "ResNet", "Face Recognition", "Real-time"],
+        track: "ai",
+        highlight: "1st — Training Camp 2024",
       },
     ],
   },
